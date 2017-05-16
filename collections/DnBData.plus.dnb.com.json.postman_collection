@@ -1,0 +1,265 @@
+{
+	"variables": [],
+	"info": {
+		"name": "D&B Direct+ Data Products",
+		"_postman_id": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"order": [
+		"24370b77-62d0-4da9-ade2-bc28ca0fb560",
+		"bbd3f54d-1cd6-4652-a9bb-2fb43df49e9e",
+		"c93d8d21-edf2-4d69-9004-a8aae9fe1a96",
+		"5a2e98cb-41ed-47ab-a938-83939b159c94",
+		"d33b8a6d-5ead-47a0-b20e-47b7b3b1c066",
+		"f9dbc201-3d3d-42f6-b138-a9c4ec5a3e5a",
+		"d2e48f4f-9a81-4cfe-ade9-787c21ed2398",
+		"eab329f8-6f78-4f5b-98ee-cdc95afc07c1",
+		"c280caf3-84f1-47dc-8b46-dc6a143acbd3"
+	],
+	"item": [
+		{
+			"id": "24370b77-62d0-4da9-ade2-bc28ca0fb560",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Authentication - Access Token",
+			"request": {
+				"url": "https://plus.dnb.com/v2/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic <base 64 encoded(yourKey:yourSecret)>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "bbd3f54d-1cd6-4652-a9bb-2fb43df49e9e",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Alternate Linkage",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/001024314?productId=lnkalt&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "c93d8d21-edf2-4d69-9004-a8aae9fe1a96",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Company Profile w/Linkage",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/804735132?productId=cmplnk&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "5a2e98cb-41ed-47ab-a938-83939b159c94",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Company Profile, Executives w/Linkage",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/804735132?productId=cmpelk&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "d33b8a6d-5ead-47a0-b20e-47b7b3b1c066",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Decision HQ",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/804735132?productId=aasdhq&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "f9dbc201-3d3d-42f6-b138-a9c4ec5a3e5a",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Global IT Buydex",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/001024314?productId=aasbig&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "d2e48f4f-9a81-4cfe-ade9-787c21ed2398",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Minority Linkage",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/001030311?productId=lnkmin&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "eab329f8-6f78-4f5b-98ee-cdc95afc07c1",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Upward Linkage",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/804735132?productId=lnkupd&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"id": "c280caf3-84f1-47dc-8b46-dc6a143acbd3",
+			"collectionId": "22c5b364-4e17-4b2a-b5a6-97f84c3f8e9f",
+			"name": "Material Change",
+			"request": {
+				"url": "https://plus.dnb.com/v1/data/duns/804735132?productId=aasmcu&versionId=v1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
