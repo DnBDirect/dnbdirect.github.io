@@ -1,31 +1,32 @@
 {
-	"id": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
+	"id": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
 	"name": "D&B Direct+ Monitoring",
 	"description": "",
 	"order": [
-		"984e5823-7a7e-5666-1079-912d82a66885",
-		"fb16a15f-4fd9-4f98-3813-3ec2867dc530",
-		"b68c8e38-104a-5a2b-55c0-ca65adc8183f",
-		"6a5ace03-ea5b-68bd-751f-fc44a7f1fd4f",
-		"25018450-64b7-508d-00a2-7c9db752b89c",
-		"489c4c91-317b-6889-e90a-ea650fa2f351",
-		"8ff8d66e-50aa-0037-18a6-2a8b3ff39bba",
-		"3f3f897a-4813-a332-116c-feea95d7eec9",
-		"b93f78c3-b56e-2123-21c5-8057993cd346",
-		"7390f4d2-1080-cd65-a562-8b5bdd498839",
-		"66ec9265-f4ca-ff93-a65c-5adecb2abd3e",
-		"d3682acf-ddd8-35f1-a173-5d396ab67e58",
-		"faf4b8d9-0681-bd2a-b5e3-f79a952fa162",
-		"1e5a9eea-8b01-c430-0e4e-3630be1175ea",
-		"d9a5a45e-9e21-f0d9-ccfe-6146fa0479c1"
+		"9f7cea6c-1ee8-1f53-9ecc-5a010093369c",
+		"f1e9e3d1-c20d-66df-c39e-e64b27a57f49",
+		"ccc4ca5a-ee2f-c06e-668b-ba0fbd4e70c8",
+		"ab610012-e156-27bc-1148-f79c160f167b",
+		"eded8e9d-d247-2077-3d64-55ec705b7f43",
+		"50eee79c-0b04-e252-49f9-da1021c857db",
+		"0bbb28e8-3ab7-e696-0ccb-cb23df86e30c",
+		"da9b0d01-d5d8-496b-cfa7-d906f3e58c8d",
+		"e9e9eda7-9aa4-caa6-f7db-552c966ccc9c",
+		"c7bfefec-efd7-af2e-dd15-c8610aecead5",
+		"348615d2-4a27-7f53-9046-4f404b3b5ff1",
+		"08941923-fef4-07be-d3b9-1dcd097d5c85",
+		"bfbf4a02-f7bb-e1ee-9a31-4c742a36edbf",
+		"b0e6f03c-ab46-5ea6-b1e9-2b08af01714f",
+		"c094a900-f8b6-ef11-ebbf-06a3bcf574ee"
 	],
 	"folders": [],
 	"timestamp": 0,
 	"owner": 0,
 	"public": false,
+	"hasRequests": true,
 	"requests": [
 		{
-			"id": "1e5a9eea-8b01-c430-0e4e-3630be1175ea",
+			"id": "08941923-fef4-07be-d3b9-1dcd097d5c85",
 			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
 			"headerData": [
 				{
@@ -37,6 +38,206 @@
 				{
 					"key": "Accept",
 					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498489097659,
+			"name": "List all Registrations",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "0bbb28e8-3ab7-e696-0ccb-cb23df86e30c",
+			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/Test1/duns/remove",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [
+				{
+					"key": "duns",
+					"value": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498489006198,
+			"name": "Remove DUNS from Registration",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "348615d2-4a27-7f53-9046-4f404b3b5ff1",
+			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/status",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498489077471,
+			"name": "Get Registration Status",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "50eee79c-0b04-e252-49f9-da1021c857db",
+			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498488963816,
+			"name": "Delete Registration - Submit",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "9f7cea6c-1ee8-1f53-9ecc-5a010093369c",
+			"headers": "Authorization: Bearer <base 64 encoded(yourKey:yourSecret)>\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <base 64 encoded(yourKey:yourSecret)>",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v2/token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498488756911,
+			"name": "Authentication - Access Token",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": [],
+			"rawModeData": "{ \"grant_type\" : \"client_credentials\" }"
+		},
+		{
+			"id": "ab610012-e156-27bc-1148-f79c160f167b",
+			"headers": "Authorization: Bearer <access_token>\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/duns/804735132",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498498615441,
+			"name": "Check for DUNS in Registration",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "b0e6f03c-ab46-5ea6-b1e9-2b08af01714f",
+			"headers": "Authorization: Bearer <access_token>\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
 					"description": "",
 					"enabled": true
 				}
@@ -52,39 +253,53 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498489196992,
+			"time": 1498498664524,
 			"name": "Suppress Notifications",
 			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
 			"responses": []
 		},
 		{
-			"id": "25018450-64b7-508d-00a2-7c9db752b89c",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
+			"id": "bfbf4a02-f7bb-e1ee-9a31-4c742a36edbf",
+			"headers": "Authorization: Bearer <access_token>\n",
 			"headerData": [
 				{
 					"key": "Authorization",
 					"value": "Bearer <access_token>",
 					"description": "",
 					"enabled": true
-				},
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/deliveries",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498498675737,
+			"name": "List Pending Deliveries",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "c094a900-f8b6-ef11-ebbf-06a3bcf574ee",
+			"headers": "Authorization: Bearer <access_token>\n",
+			"headerData": [
 				{
-					"key": "Accept",
-					"value": "application/json",
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1?ackToken=[ackToken]",
-			"queryParams": [
-				{
-					"key": "ackToken",
-					"value": "[ackToken]",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/suppress",
+			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -94,14 +309,77 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498488952064,
-			"name": "Delete Registration - Confirm",
+			"time": 1498498656230,
+			"name": "Unsuppress Notifications",
 			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
 			"responses": []
 		},
 		{
-			"id": "3f3f897a-4813-a332-116c-feea95d7eec9",
+			"id": "c7bfefec-efd7-af2e-dd15-c8610aecead5",
+			"headers": "Authorization: Bearer <access_token>\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498498638380,
+			"name": "Get Registration Details",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "ccc4ca5a-ee2f-c06e-668b-ba0fbd4e70c8",
+			"headers": "Authorization: Bearer <access_token>\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer <access_token>",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/duns/add",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [
+				{
+					"key": "duns",
+					"type": "file",
+					"enabled": true,
+					"value": ""
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498498606721,
+			"name": "Add DUNS to Regisration",
+			"description": "",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
+			"responses": []
+		},
+		{
+			"id": "da9b0d01-d5d8-496b-cfa7-d906f3e58c8d",
 			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
 			"headerData": [
 				{
@@ -180,274 +458,16 @@
 			"time": 1498488929982,
 			"name": "Edit Registration Details",
 			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
 			"responses": []
 		},
 		{
-			"id": "489c4c91-317b-6889-e90a-ea650fa2f351",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
+			"id": "e9e9eda7-9aa4-caa6-f7db-552c966ccc9c",
+			"headers": "Authorization: Bearer <access_token>\n",
 			"headerData": [
 				{
 					"key": "Authorization",
 					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "DELETE",
-			"data": [],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498488963816,
-			"name": "Delete Registration - Submit",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "66ec9265-f4ca-ff93-a65c-5adecb2abd3e",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/status",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498489077471,
-			"name": "Get Registration Status",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "6a5ace03-ea5b-68bd-751f-fc44a7f1fd4f",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/duns/804735132",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498488863328,
-			"name": "Check for DUNS in Registration",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "7390f4d2-1080-cd65-a562-8b5bdd498839",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498489057861,
-			"name": "Get Registration Details",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "8ff8d66e-50aa-0037-18a6-2a8b3ff39bba",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/Test1/duns/remove",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PATCH",
-			"data": [
-				{
-					"key": "duns",
-					"value": "",
-					"type": "file",
-					"enabled": true
-				}
-			],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498489006198,
-			"name": "Remove DUNS from Registration",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "984e5823-7a7e-5666-1079-912d82a66885",
-			"headers": "Authorization: Bearer <base 64 encoded(yourKey:yourSecret)>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <base 64 encoded(yourKey:yourSecret)>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v2/token",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498488756911,
-			"name": "Authentication - Access Token",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": [],
-			"rawModeData": "{ \"grant_type\" : \"client_credentials\" }"
-		},
-		{
-			"id": "b68c8e38-104a-5a2b-55c0-ca65adc8183f",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/duns/add",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PATCH",
-			"data": [
-				{
-					"key": "duns",
-					"type": "file",
-					"enabled": true
-				}
-			],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498488829065,
-			"name": "Add DUNS to Regisration",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "b93f78c3-b56e-2123-21c5-8057993cd346",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
 					"description": "",
 					"enabled": true
 				}
@@ -463,14 +483,14 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498489027374,
+			"time": 1498498632436,
 			"name": "Export list of DUNS",
 			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
 			"responses": []
 		},
 		{
-			"id": "d3682acf-ddd8-35f1-a173-5d396ab67e58",
+			"id": "eded8e9d-d247-2077-3d64-55ec705b7f43",
 			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
 			"headerData": [
 				{
@@ -486,42 +506,16 @@
 					"enabled": true
 				}
 			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498489097659,
-			"name": "List all Registrations",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "d9a5a45e-9e21-f0d9-ccfe-6146fa0479c1",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
+			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1?ackToken=[ackToken]",
+			"queryParams": [
 				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
+					"key": "ackToken",
+					"value": "[ackToken]",
+					"equals": true,
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/suppress",
-			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -531,48 +525,14 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498489208042,
-			"name": "Unsuppress Notifications",
+			"time": 1498488952064,
+			"name": "Delete Registration - Confirm",
 			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
 			"responses": []
 		},
 		{
-			"id": "faf4b8d9-0681-bd2a-b5e3-f79a952fa162",
-			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "Bearer <access_token>",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "https://plus.dnb.com/v1/monitoring/registrations/myTest1/deliveries",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498488636578,
-			"name": "List Pending Deliveries",
-			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
-			"responses": []
-		},
-		{
-			"id": "fb16a15f-4fd9-4f98-3813-3ec2867dc530",
+			"id": "f1e9e3d1-c20d-66df-c39e-e64b27a57f49",
 			"headers": "Authorization: Bearer <access_token>\nAccept: application/json\n",
 			"headerData": [
 				{
@@ -596,20 +556,14 @@
 			"method": "POST",
 			"data": [
 				{
-					"key": "grant_type",
-					"value": "client_credentials",
+					"key": "reference",
+					"value": "myTest1",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "description",
 					"value": "Reg for cmpelk updates",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "reference",
-					"value": "myTest1",
 					"type": "text",
 					"enabled": true
 				},
@@ -656,24 +610,6 @@
 					"enabled": true
 				},
 				{
-					"key": "destinationHost",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "destinationPort",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "destinationUrn",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
 					"key": "email",
 					"value": "ourgroup@mycompany.com",
 					"type": "text",
@@ -682,7 +618,8 @@
 				{
 					"key": "duns",
 					"type": "file",
-					"enabled": true
+					"enabled": true,
+					"value": ""
 				},
 				{
 					"key": "seedData",
@@ -701,10 +638,10 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498488771166,
+			"time": 1498498592434,
 			"name": "Create Registration",
 			"description": "",
-			"collectionId": "2e7663e4-7840-49fa-541f-e0d653ec6abe",
+			"collectionId": "d1ec5f4d-2739-de41-118f-8334e80e37e7",
 			"responses": []
 		}
 	]
