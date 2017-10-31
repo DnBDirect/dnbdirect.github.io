@@ -1,0 +1,307 @@
+{
+	"info": {
+		"name": "D&B Direct+ Search",
+		"_postman_id": "062098e7-595f-a79d-e904-e2f07325bcd4",
+		"description": "Search API calls.\n---------------\n1.17.7.2: Added includeNavigators request parameter.\n1.17.7.1: Added Contact Search POST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication - Access Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"dnbtoken\",jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"type": "any"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic <base 64 encoded(yourKey:yourSecret)>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v2/token",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Company Criteria Search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"\tvar jsonData = JSON.parse(responseBody);\r",
+							"\tpostman.setGlobalVariable(\"dnbtoken\",jsonData.access_token);\r",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"duns\": \"884114609\",\r\n\t\"isMarketable\": true,\r\n\t\"isOutOfBusiness\": false,\r\n\t\"isTelephoneDisconnected\": false,\r\n\t\"searchTerm\": \"dun\",\r\n\t\"primaryName\": \"The Dun & Bradstreet\",\r\n\t\"tradeStyleName\": \"D&B\",\r\n\t\"countryISOAlpha2Code\": \"US\",\r\n\t\"addressRegion\": \"new jersey\",\r\n\t\"addressLocality\": \"short HILLS\",\r\n\t\"streetAddressLine1\": \"103 JFK PKWY\",\r\n\t\"postalCode\": \"07078\",\r\n\t\"locationRadius\": {\r\n\t\t\"lat\": 40.742064,\r\n\t\t\"lon\": -74.362436,\r\n\t\t\"radius\": 5,\r\n\t\t\"unit\": \"km\"\r\n\t},\r\n\t\"telephoneNumber\": \"9739215500\",\r\n\t\"domain\": \"dnb.com\",\r\n\t\"registrationNumbers\": [\r\n\t\t\"22-3725387\"\r\n\t],\r\n\t\"numberOfEmployees\": {\r\n\t\t\"informationScope\": 9067,\r\n\t\t\"maximumValue\": 5000,\r\n\t\t\"minimumValue\": 2500\r\n\t},\r\n\t\"businessEntityType\": [\r\n\t\t451\r\n\t],\r\n\t\"tickerSymbol\": \"DNB\",\r\n\t\"yearlyRevenue\": {\r\n\t\t\"maximumValue\": 50000000000000,\r\n\t\t\"minimumValue\": 1000000\r\n\t},\r\n\t\"familytreeRolesPlayed\": [\r\n\t\t12774,\r\n\t\t12275\r\n\t],\r\n\t\"globalUltimateFamilyTreeMembersCount\": {\r\n\t\t\"maximumValue\": 500,\r\n\t\t\"minimumValue\": 100\r\n\t},\r\n\t\"usSicV4\": [\r\n\t\t\"7323\"\r\n\t],\r\n\t\"pageNumber\": 1,\r\n\t\"pageSize\": 10,\r\n\t\"includeNavigators\": true\r\n}"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/search/criteria",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search",
+						"criteria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Company Typeahead Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/search/typeahead?searchTerm=Wal&countryISOAlpha2Code=US",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search",
+						"typeahead"
+					],
+					"query": [
+						{
+							"key": "searchTerm",
+							"value": "Wal",
+							"equals": true
+						},
+						{
+							"key": "countryISOAlpha2Code",
+							"value": "US",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Search POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"\tvar jsonData = JSON.parse(responseBody);\r",
+							"\tpostman.setGlobalVariable(\"dnbtoken\",jsonData.access_token);\r",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contactID\": \"000321976318\",\r\n    \"contactEmail\": \"joe.bloggs@email.com\",\r\n    \"givenName\": \"Joseph\",\r\n    \"familyName\": \"Bloggs\",\r\n    \"countryISOAlpha2Code\": \"US\",\r\n    \"usSicV4\": [\"5461\",\"5014\"],\r\n    \"duns\": \"965582781\",\r\n    \"addressLocality\": \"PISCATAWAY\",\r\n    \"addressRegion\": \"NJ\",\r\n    \"postalCode\": \"088543921\",\r\n    \"sort\":[\r\n        { \"item\": \"searchCandidates.contact.organization.primaryAddress.country.isoAlpha2Code\", \"direction\": \"ascending\" },\r\n        { \"item\": \"searchCandidates.contact.organization.primaryIndustryCodes.usSicV4\", \"direction\": \"descending\" },\r\n        { \"item\": \"searchCandidates.contact.organization.duns\", \"direction\": \"ascending\" },\r\n        { \"item\": \"searchCandidates.contact.familyName\", \"direction\": \"ascending\" }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/search/contact",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Search by Email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/search/contact?contactEmail=schneidera@americanstandard.com",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "contactEmail",
+							"value": "schneidera@americanstandard.com",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Search by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/search/contact?contactID=000321976318",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "contactID",
+							"value": "000321976318",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

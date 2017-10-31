@@ -1,0 +1,610 @@
+{
+	"info": {
+		"name": "D&B Direct+ Web Visitor",
+		"_postman_id": "23696020-a9d2-1dee-2dfc-2d803aeed8a7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication - Access Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"dnbtoken\",jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"type": "any"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic <base 64 encoded(yourKey:yourSecret)>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v2/token",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, Domain, Basic",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/domain/ethercycle.com?view=basic",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"domain",
+						"ethercycle.com"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "basic",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, Domain, Standard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/domain/ethercycle.com?view=standard",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"domain",
+						"ethercycle.com"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "standard",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, Domain, Linkage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/domain/ethercycle.com?view=linkage",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"domain",
+						"ethercycle.com"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "linkage",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, Email, Basic",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/email/reidym@dnb.com?view=basic",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"email",
+						"reidym@dnb.com"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "basic",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, Email, Standard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/email/reidym@dnb.com?view=standard",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"email",
+						"reidym@dnb.com"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "standard",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, Email, Linkage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/email/reidym@dnb.com?view=linkage",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"email",
+						"reidym@dnb.com"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "linkage",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, IP Address, Basic",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/ip/98.158.198.35?view=basic",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"ip",
+						"98.158.198.35"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "basic",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, IP Address, Standard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/ip/98.158.198.35?view=standard",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"ip",
+						"98.158.198.35"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "standard",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, IP Address, Linkage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/ip/98.158.198.35?view=linkage",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"ip",
+						"98.158.198.35"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "linkage",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, IP Resource, biz, Basic",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/ipresource/98.158.198.35?view=basic&ipDomainType=biz",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"ipresource",
+						"98.158.198.35"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "basic",
+							"equals": true
+						},
+						{
+							"key": "ipDomainType",
+							"value": "biz",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, IP Resource, biz, Standard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/ipresource/98.158.198.35?view=standard&ipDomainType=biz",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"ipresource",
+						"98.158.198.35"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "standard",
+							"equals": true
+						},
+						{
+							"key": "ipDomainType",
+							"value": "biz",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WVI, IP Resource, biz, Linkage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{dnbtoken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"grant_type\" : \"client_credentials\" }"
+				},
+				"url": {
+					"raw": "https://plus.dnb.com/v1/duns-search/ipresource/98.158.198.35?view=linkage&ipDomainType=biz",
+					"protocol": "https",
+					"host": [
+						"plus",
+						"dnb",
+						"com"
+					],
+					"path": [
+						"v1",
+						"duns-search",
+						"ipresource",
+						"98.158.198.35"
+					],
+					"query": [
+						{
+							"key": "view",
+							"value": "linkage",
+							"equals": true
+						},
+						{
+							"key": "ipDomainType",
+							"value": "biz",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
