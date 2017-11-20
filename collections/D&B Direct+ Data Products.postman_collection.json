@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "D&B Direct+ Data Products",
-		"_postman_id": "cf22b299-095f-f17e-ac7a-42a1ab2e9337",
+		"_postman_id": "c4cb12a5-9dc9-2182-ef38-94d5ccc94f49",
 		"description": "Includes several Data API options.  Not all data products are included.  \n----------------\n1.17.7.1: Added tradeUp to some products",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -196,7 +196,7 @@
 					"raw": "{ \"grant_type\" : \"client_credentials\" }"
 				},
 				"url": {
-					"raw": "https://plus.dnb.com/v1/data/duns/804735132?productId=cmpelk&versionId=v1",
+					"raw": "https://plus.dnb.com/v1/data/duns/804735132?productId=cmpelk&versionId=v2",
 					"protocol": "https",
 					"host": [
 						"plus",
@@ -217,7 +217,7 @@
 						},
 						{
 							"key": "versionId",
-							"value": "v1",
+							"value": "v2",
 							"equals": true
 						}
 					]
